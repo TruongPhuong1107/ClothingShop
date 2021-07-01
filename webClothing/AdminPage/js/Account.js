@@ -86,15 +86,6 @@ $(document).ready(function () {
       }
 
   })
-
-
-
-
-
-
-
-
-
 });
 
 
@@ -112,7 +103,7 @@ function removeAccount(event) {
       success: function (data) {
         alert("Success");
         console.log(data);
-       window.location="/Web%20Sach/AdminPage/Account.html";
+       window.location="../Account.html";
       },
     });
   } else {
