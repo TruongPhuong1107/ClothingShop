@@ -233,20 +233,20 @@ function adjustProduct()
     let price = document.getElementById("price").value;
     let piczoom = document.getElementById("imgzoomfile").files[0];
     let cate = document.getElementById("categoryCode").value;
-  
+     let picname, piczoomname;
     if(typeof pic === 'undefined'){
-      pic=pic_org;
+      picname=pic_org;
     }
     else{
       
-      pic=pic.name;
+      picname=pic.name;
     }
     if(typeof piczoom === 'undefined'){
-      piczoom=piczoom_org;
+      piczoomname=piczoom_org;
     }
     else{
   
-      piczoom=piczoom.name;
+      piczoomname=piczoom.name;
     }
 
     
@@ -256,8 +256,8 @@ function adjustProduct()
         "mota": detail,
         "dongia": price,
         "tensp": name,
-        "hinh": pic,
-        "hinh_rong": piczoom,
+        "hinh": picname,
+        "hinh_rong": piczoomname,
         "maloai":cate,
         "chitietkt":size,
         "chitietmau":color    
@@ -266,8 +266,12 @@ function adjustProduct()
     console.log(JSON.stringify(obj));
     let formData = new FormData(); 
     let fileUpLoad=[];
-    fileUpLoad.push(pic);
-    fileUpLoad.push(piczoom);
+    if(typeof pic !=='undefined'){
+      fileUpLoad.push(pic);
+    }
+    if(typeof piczoom !=='undefined'){
+      fileUpLoad.push(piczoom);
+    }
   fileUpLoad.forEach(async (item)=>{
     formData.append("file", item);
   await fetch('../upload.php', {

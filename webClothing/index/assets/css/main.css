@@ -19,9 +19,8 @@ header.sticky{
     flex-grow: 3.5;
     text-align: left;
 }
-.box-actions-left:hover .dropdown-content{
-    display: block;
-}
+
+
 .dropdown-content a{
     text-decoration: none;
     color: black;
@@ -38,11 +37,35 @@ header.sticky{
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+.icon{
+display: inline-block;
+}
+.home{
+margin-left: 20px;
+cursor: pointer;
+color: rgb(0, 0, 0);
+}
+
+.home a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.home a:active{
+    color:rgb(116, 112, 112);
+}
+#justify{
+    border: white;
+    background-color: white;
+}
+.show{
+    display: block;
+}
 .dropdown-content a:hover{
     background-color: beige
 }
 .box-title{
     flex-grow: 4;
+    position: relative;
    display: block;
    text-align: center;
   font-size: 2.5rem;

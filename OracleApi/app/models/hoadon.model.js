@@ -42,6 +42,23 @@ hoadon.getAll= async() =>{
        const result = await sql.simpleExecute(baseQuery, binds); 
        return result.rows;
     }
+    hoadon.getByCustomer = async(context) => {
+      const baseQuery =
+      `SELECT mahd "mahd",makh "makh", ngaylap "ngaylap", tongtien "tongtien", noigiao "noigiao", hoten "hoten", sdt "sdt", trangthai "trangthai",
+      CURSOR(SELECT t.masp "masp",s.hinh "hinh", s.tensp "tensp", t.soluong "soluong",s.dongia"dongia", k.tenkt "tenkt", m.tenmau "tenmau" from mau m, kichthuoc k, sanpham s, cthd t 
+       where m.mamau=t.mamau
+       and t.makt=k.makt
+       and s.masp=t.masp
+       and t.mahd=d.mahd
+             ) as "cthd"
+           from hoadon d where makh=:makh`;
+      const binds = {}; 
+      if (context.id) {
+        binds.makh = context.id;
+      }
+       const result = await sql.simpleExecute(baseQuery, binds); 
+       return result.rows;
+    }
 
     hoadon.create = async (hd) => {
       const createSql =

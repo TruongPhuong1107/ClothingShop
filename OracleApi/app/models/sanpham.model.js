@@ -111,7 +111,7 @@ sanpham.getNew= async() =>{
        where m.mamau=km.mamau
        and km.masp=d.masp
              ) as "chitietmau"
-           from sanpham d where d.tensp like :value || '%'`;
+           from sanpham d where d.tensp like '%'||:value ||'%'`;
       const binds = {}; 
       if (context.value) {
         binds.value = context.value;

@@ -41,12 +41,12 @@ $(document).ready( function () {
         console.log(data);
           $(".product-name-price").append(`
           <h2 id="product-name-h2">${data.tensp}</h2>
-          <span id="product-price">${data.dongia} vnđ</span>
+          <span id="product-price">${numberWithCommas(data.dongia)} vnđ</span>
           `)
 
          $(".left-column").append(
-       `<img class="myimage" id="myimage" data-zoom-image="../img/${data.hinh_rong}" src="../img/${data.hinh}" width="420px" height="430px" alt="">
-       <div class="myresult" class="img-zoom-result" style="width: 400px;height: 400px;"></div>`
+       `<img class="myimage" id="myimage" data-zoom-image="../img/${data.hinh_rong}" src="../img/${data.hinh}" width="380px" height="400px" alt="">
+       <div class="myresult" class="img-zoom-result" ></div>`
        )
       
         
@@ -60,6 +60,7 @@ $(document).ready( function () {
            $("#custom-select").append(`
             <option value="${items.makt}">${items.tenkt}</option>`)
        })
+       $(".tab-panel-detail").append(`<div>${data.mota}</div>`)
     }
    }
    )
@@ -119,3 +120,6 @@ function themvaogio(){
 }
 zoom();
 });
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

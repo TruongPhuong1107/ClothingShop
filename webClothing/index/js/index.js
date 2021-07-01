@@ -1,4 +1,4 @@
-var obj={"page":1, "limit":1}
+var obj={"page":1, "limit":6}
 $(document).ready(function () {
     
     $.ajax({

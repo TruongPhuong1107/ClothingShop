@@ -96,6 +96,21 @@ exports.findOne = async (req, res,next) => {
     next(err);
   }
 };
+exports.findCustomerBill = async (req, res,next) => {
+  try {
+    const context = {};
+
+    context.id = parseInt(req.query.makh, 10);
+    console.log(context);
+    const rows = await hoadon.getByCustomer(context);
+ 
+   
+        res.status(200).json(rows);
+     
+  } catch (err) {
+    next(err);
+  }
+};
 exports.delete = async(req, res,next) => {
     try {
       const id = parseInt(req.params.mahd, 10);

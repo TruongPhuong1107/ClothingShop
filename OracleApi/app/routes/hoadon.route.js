@@ -6,6 +6,7 @@ module.exports = app => {
   
     // Retrieve all Customers
     app.get("/hoadon", hoadon.findAll);
+    app.get("/khachhang/hoadon", hoadon.findCustomerBill);
   
     // Retrieve a single Customer with customerId
     app.get("/hoadons", hoadon.findOne);

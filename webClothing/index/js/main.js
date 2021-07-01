@@ -45,6 +45,35 @@ $(document).ready(function () {
 	})
 })
 ///////xử lí tìm kiếm////
+function myFunction(id) {
+	document.getElementById(id).classList.toggle("show");
+}
+var justify = document.getElementsByClassName('fa-align-justify');
+//lấy tất cả các thẻ chứa menu con
+var contents = document.getElementsByClassName('dropdown-content');
+//lặp qua tất cả các button menu và gán sự kiện
+for (var i = 0; i < justify.length; i++) {
+	justify[i].addEventListener("click", function(){
+		//lấy value của button
+		var id = this.value;
+		console.log(id);
+		//ẩn tất cả các menu con đang được hiển thị
+		for (var i = 0; i < contents.length; i++) {
+			contents[i].classList.remove("show");
+		}
+		//hiển thị menu vừa được click
+		myFunction(id);
+	});
+}
+//nếu click ra ngoài các button thì ẩn tất cả các menu con
+window.addEventListener("click", function(){
+	 if (!event.target.matches('.fa-align-justify')){
+		for (var i = 0; i < contents.length; i++) {
+			contents[i].classList.remove("show");
+		}
+	 }
+});
+
 $('.search').keypress(function(event) {
     var value= document.querySelector(".search").value;
     if (event.keyCode == 13 || event.which == 13) {
@@ -54,6 +83,7 @@ $('.search').keypress(function(event) {
 //////kiểm tra login-logout////////////////////
 function logOut(){
 	sessionStorage.removeItem("userInfo");
+	sessionStorage.removeItem("product");
 	return;
   }
   
@@ -61,7 +91,7 @@ function logOut(){
 	if (sessionStorage.getItem("userInfo") !== null) {
 	  document.getElementById('login-check').innerHTML=
 	  `<span id="button">
-		  <i class="far fa-handshake" ></i><span style="font-size:15px; margin: 0 10px; font-weight:bold">Xin chào ${JSON.parse(sessionStorage.getItem("userInfo")).tenchutk}</span> 
+	  <a href="./BillInfo.html" style="margin-right:15px; font-weight:bold; text-decoration:none; color:#333"> <span style="margin-right:15px; font-weight:bold"><i class="far fa-user" style="margin-right:5px"></i> ${JSON.parse(sessionStorage.getItem("userInfo")).tenchutk}</span> </a>
 		  <a onclick="logOut()" href="./index.html" class="logout">Đăng xuất</a>
 		</span>  
 	  `

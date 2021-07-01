@@ -15,7 +15,7 @@ $(document).ready(function () {
               </div>
               <div class="product-info">
                <p>${items.tensp}</p>
-               <p class="product-price">${items.dongia} vnđ</p>
+               <p class="product-price">${numberWithCommas(items.dongia)} vnđ</p>
                <a  class ="a-muangay" href="product-description.html?id=${items.masp}"><button class="btn-product-muangay">XEM CHI TIẾT</button> </a> 
               </div>
               
@@ -26,3 +26,6 @@ $(document).ready(function () {
    })
 })
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
