@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/blog.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+
+    <title>Document</title>
+</head>
+<body>
+ <header>
+    <div class="bar">
+        <div class="container-group">
+            <div class="box-actions-left">
+               <i class="fas fa-align-justify"></i>
+               <div class="dropdown-content">
+                   
+                 
+                   </div>
+            </div>
+           
+            <div class="box-title">LYS</div>
+            <div class="box-actions-right">
+               <span>
+                  
+                       <div class="search-box"><input id="search" class="search" type="text"><i id="arrow-right" class="fas fa-arrow-right"></i></div>
+               
+                   <span class="login-check" id="login-check"></span>
+       
+                   <a id="icon-search"><i id="icon-search" class="fas fa-search"></i></a>
+                   <a href="cart.html" class="cart">CART</a>
+               </span>            
+               </div>              
+        </div>
+       
+       </div>
+ </header>
+ <main>
+     <div class="cart-table">
+        <h2>GIỎ HÀNG</h2>
+        <table id="product-table">
+            <thead>
+                <th>Hình sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Thông tin</th>
+                <th>Giá tiền</th>
+                <th></th>
+            </thead>
+            <tbody id="product-cart">
+               
+                    
+                
+                  
+            </tbody>
+        </table>
+     </div>
+  <div class="btn-group">
+      <div class="checkout" id="checkout"><a href="./checkout.html">THANH TOÁN</a></div>
+  </div>
+   <a href="./index.html" > <div class="continue">Tiếp tục mua hàng</div></a>
+
+
+ </main>
+ <footer>
+    <div class="footer">
+        <p class="copy-right">&copy;Bản quyền thuộc về <b>  LYS </b> </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+</html>

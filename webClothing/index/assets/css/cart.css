@@ -1,0 +1,91 @@
+table{
+    width: 100%;
+    border-bottom: rgb(255, 255, 255) 1px solid;
+    border-collapse:collapse;
+}
+th{
+    border-bottom: rgb(158, 156, 156) 1px solid;
+}
+td:not(.total){
+    border-bottom: rgb(158, 156, 156) 1px solid;
+    text-align: center;
+}
+.total{
+    text-align: center;
+    font-weight: 600;
+}
+.cart-table{
+    margin-top: 100px;
+    color: rgb(44, 43, 43);
+}
+.img{
+   
+}
+.number{
+    height: 30px;
+    width: 50px;
+}
+.btn-group{
+    display: flex;
+    float: right;
+    margin-top: 40px;
+}
+.btn-group > .update , .checkout{
+   border: black 1px solid;
+   width: 120px;
+   padding: 10px 5px;
+   margin: 0px 40px;
+   text-align: center;
+   font-size: 0.9rem;
+   font-weight: 600;
+   width: 180px;
+}
+.continue{
+    clear: right;
+    margin-top: 100px;
+}
+.buttons_added {
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    vertical-align:top;
+}
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#f9f9f9;
+    height:2.2rem;
+    width:1.9rem;
+    padding:0;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+}
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+.is-form.minus {
+    border-radius:4px 0 0 4px;
+}
+.is-form.plus {
+    border-radius:0 4px 4px 0;
+}
+.input-qty {
+    background-color:#fff;
+    height:2.2rem;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right:0;
+    padding:0;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}

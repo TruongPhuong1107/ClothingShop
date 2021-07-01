@@ -1,0 +1,22 @@
+*{
+    box-sizing:inherit;
+}
+html{
+font-size: 100%;
+line-height: 1.6rem;
+font-family: 'Roboto', sans-serif;
+box-sizing: border-box;
+}
+.body{
+    width: 1200px;
+    max-width: 100%;
+    margin:0 auto;
+    padding: 0px;
+}
+.body__full-width{
+    width:100%;
+}
+.body__row{
+    display: flex;
+    flex-wrap: wrap;
+}
