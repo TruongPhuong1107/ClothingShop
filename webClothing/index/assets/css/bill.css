@@ -1,56 +1,79 @@
 *{
-    font-family: 'Roboto', sans-serif;
-   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 .bill-container{
-    margin: 100px 20px;
+   margin: 100px 0px;
+   
 }
-.ibillinfo{
-    display: inline-block;
-    padding:20px;
-    margin-left: 100px;
-
-
+.info{
+    padding:10px ;
+}
+.billInfoItem{
+    border: solid 1px rgb(138, 135, 135);
+    background-color: rgb(250, 250, 250);
+    margin-bottom: 20px;
+}
+.billInfo .billinfo-item{
+    border-top: 1px solid rgb(207, 201, 201);
+    display: flex;
+    padding: 5px 10px;
+    width: 100%;
+  
+}
+.ibillinfo.image{
+    width: calc(100% / 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.forResponsive{
+    width: calc(100% - (100% / 6));
+    display: flex;
+}
+.forResponsive .ibillinfo{
+    width: calc(100% / 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .color{
     font-weight: 600;
 }
-.billInfoItem{
-    
-    padding: 20px 10px;
-    border: solid 2px rgb(138, 135, 135);
-    margin-top: 20px;
-    background-color: rgb(250, 250, 250);
-
-}
-.price{
-    text-align: right;
-    margin-right: 20px;
-
-}
 .billInfo{
     font-weight: 500;
-
 }
-.billinfo-item{
 
-border-top: 1px solid rgb(207, 201, 201);
-text-align: center;
-}
 div .billinfo-item:last-child{
     border-bottom: 1px solid rgb(207, 201, 201);
 }
 .total{
-    margin-top: 20px;
+    padding: 10px;
     text-align: right;
-    margin-right: 20px;
-
 }
 .number{
     font-size: 1.5rem;
     font-weight: 600;
     color: rgb(231, 9, 9);
 }
-.image{
-    padding-top: 50px;
+@media (max-width:739px){
+    .ibillinfo.image{
+        position: relative;
+        width: 43%;
+        overflow: hidden;
+    }
+    .ibillinfo.image img{
+        width: 90%;
+        height: 90%;
+    }
+    .forResponsive{
+        width: 55%;
+        flex-direction: column;
+        padding-left: 50px;
+    }
+    .forResponsive .ibillinfo{
+        width: 100%;
+        justify-content: start;
+    }
 }

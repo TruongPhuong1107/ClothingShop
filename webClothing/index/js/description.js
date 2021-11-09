@@ -1,10 +1,8 @@
-
 ////xử lí tab-panel///
 var listul= document.getElementsByTagName("ul")[0];
 var listli= listul.getElementsByTagName("li");
 var tab=document.getElementsByClassName("tab-panel");
 var i;
-
 function chontab(n){
     for(i=0;i<tab.length;i++){
         tab[i].style.display="none";
@@ -45,8 +43,11 @@ $(document).ready( function () {
           `)
 
          $(".left-column").append(
-       `<img class="myimage" id="myimage" data-zoom-image="../img/${data.hinh_rong}" src="../img/${data.hinh}" width="380px" height="400px" alt="">
-       <div class="myresult" class="img-zoom-result" ></div>`
+       `<div class="proImgDescription">
+       <img class="myimage" id="myimage" data-zoom-image="../img/${data.hinh_rong}" src="../img/${data.hinh}" width="380px" height="400px" alt="">
+       </div>
+       <div class="myresult" class="img-zoom-result" ></div>
+       `
        )
       
         
@@ -71,14 +72,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
   console.log(queryDic.id);
   var btnmua=document.getElementById("input-themvaogio");
 function themvaogio(){
-
   var name=document.getElementById("product-name-h2").innerText;
   var img=document.getElementById("myimage").getAttribute("src");
   var color=document.getElementById("color-select").value;
   var color_text=document.getElementById("color-select").selectedOptions[0].text;
   var size_text=document.getElementById("custom-select").selectedOptions[0].text;
   var size=document.getElementById("custom-select").value;
-  var price=document.getElementById("product-price").innerText;
   var qtt=document.getElementById("quantity").value;
   if(sessionStorage.getItem("userInfo")){
     var product=[];
@@ -114,8 +113,8 @@ function themvaogio(){
    }
  }
  
- btnmua.addEventListener('click',themvaogio);
- function  zoom(){
+btnmua.addEventListener('click',themvaogio);
+function zoom(){
   $("#myimage").ezPlus();
 }
 zoom();

@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.lastCheckout{
+    width: 100%;
+    min-height: 500px;
+    padding: 10px 20px 20px;
+    margin:  100px 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+.lastCheckout .productsCheckout{
+    width: calc(100% - 400px);
+    height: 100%;
+}
+.lastCheckout .customerCheckout{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: #f7f6f5;
+    padding: 40px 15px 20px;
+}
+.lastCheckout .productsCheckout{
+    padding: 40px 15px 20px;
+}
+.lastCheckout .productsCheckout h2{
+    font-weight: 400;
+    font-family: 'Lora', serif;
+}
+.lastCheckout .customerCheckout h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-family: 'Lora', serif;
+}
+
+.lastCheckout .customerCheckout .customerInfo table tr>*{
+    padding: 7px 0px;
+}
+.lastCheckout .customerCheckout .customerInfo table tr :nth-child(1){
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: left;
+}
+.lastCheckout .customerCheckout .customerInfo table tr :nth-child(2){
+    padding-left: 15px;
+    color: #717171;;
+}
+.totalLastCheckout{
+    text-align: right;
+    padding: 10px 15px;
+}
+.btn-lastCheckout{
+    display: block;
+    width: 75%;
+    background: #000;
+    padding: 10px 10px;
+    border: none;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px auto;
+}
+.product-list div{
+    display: flex;
+}
+.product-list div >*{
+    width: calc(100% / 3);
+    padding: 5px 0px;
+}
+@media(max-width:1150px) and (min-width:740px){
+   .lastCheckout{
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    .lastCheckout .productsCheckout{
+        width: 100%;
+    }
+    .lastCheckout .customerCheckout{
+        width: 100%;
+    }
+    .btn-lastCheckout{
+        width: 85%;
+    }
+    .lastCheckout .customerCheckout h2 {
+        text-align: left;
+    }  
+}
+@media(max-width:739px){
+    body{
+        font-size: 14px;
+    }
+    .lastCheckout{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
+     .lastCheckout .productsCheckout{
+        width: 100%;
+     }
+     .lastCheckout .customerCheckout{
+        width: 100%;
+     }
+     .btn-lastCheckout{
+        width: 85%;
+    }
+    .lastCheckout .customerCheckout h2 {
+        text-align: left;
+    }
+         
+}

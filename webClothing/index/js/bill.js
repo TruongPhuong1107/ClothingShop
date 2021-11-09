@@ -3,30 +3,41 @@ $(document).ready(function(){
  var dataProduct=JSON.parse(sessionStorage.getItem("product"));
  var dataAccount=JSON.parse(sessionStorage.getItem("userInfo"));
  var customerInfo=document.getElementsByClassName("customerInfo")[0];
- var productList=document.getElementsByClassName("product-list")[0];
- var checkoutBtn=document.getElementsByClassName("btn-login")[0];
+ var checkoutBtn=document.getElementsByClassName("btn-lastCheckout")[0];
  var tongtien=0;
  var today=new Date();
  var ngaylap=today.getFullYear()+'-'+today.getMonth()+'-'+today.getDate();
-
- customerInfo.innerHTML=`
- <p>Tên khách hàng: ${dataCustomerBill.hoten}</p>
- <p>Nơi giao:${dataCustomerBill.noigiao}</p>
- <p>Số điện thoại: ${dataCustomerBill.sdt}</p>
- `
  for(var i=0;i<dataProduct.length;i++){
      tongtien+=(Number(dataProduct[i].dongia)*Number(dataProduct[i].soluong));
-    console.log(dataProduct[i]);
     $(".product-list").append(`
      <div>
-     ${dataProduct[i].tensp}<span>${dataProduct[i].tenmau}, ${dataProduct[i].tenkt}</span><span> ${dataProduct[i].soluong}x${numberWithCommas(dataProduct[i].dongia)} vnđ</span>
+     <div>${dataProduct[i].tensp}</div>
+     <div>${dataProduct[i].tenmau}, ${dataProduct[i].tenkt}</div>
+     <div> ${dataProduct[i].soluong}x${numberWithCommas(dataProduct[i].dongia)} vnđ</div>
      </div>
      `)
  }
-
+ customerInfo.innerHTML=`
+ <table>
+    <tr>
+        <th>Tên khách hàng</th>
+        <td> ${dataCustomerBill.hoten}</td>
+    </tr>
+    <tr>
+        <th>Nơi giao</th>
+        <td> ${dataCustomerBill.noigiao}</td>
+    </tr>
+    <tr>
+        <th>Số điện thoại</th>
+        <td> ${dataCustomerBill.sdt}</td>
+    </tr>
+    <tr>
+        <th>tổng thanh toán</th>
+        <td> ${numberWithCommas(tongtien)} vnđ</td>
+    </tr>
+    </table>`
  function Checkout(){
-    var cthd=[];
-    
+    var cthd=[];   
     for(var i=0;i<dataProduct.length;i++){
         var product={};
         product.masp=dataProduct[i].masp;
@@ -42,7 +53,7 @@ $(document).ready(function(){
         "tongtien":tongtien,
         "noigiao":dataCustomerBill.noigiao,
         "hoten":dataCustomerBill.hoten,
-        "sdt":dataCustomerBill.noigiao,
+        "sdt":dataCustomerBill.sdt,
         "trangthai":0,
         "cthd":cthd
     }
@@ -66,4 +77,4 @@ checkoutBtn.addEventListener("click",Checkout)
 })
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+}

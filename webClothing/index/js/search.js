@@ -10,22 +10,20 @@ $(document).ready(function () {
       success: function (data) {
         quantity.innerText = data.length;
           if(data!==null){
-          data.forEach((items)=>{
-              $(".main-product-list").append(
-       `<div class="product-wrap">
-          <div class="product">
-              <div class="product-img">
-      <img src="../img/${items.hinh}" width="300x" height="380px" alt="">
-              </div>
-              <div class="product-info">
-               <p>${items.tensp}</p>
-               <p class="product-price">${numberWithCommas(items.dongia) } vnđ</p>
-               <a  class ="a-muangay" href="product-description.html?id=${items.masp}"><button class="btn-product-muangay">XEM CHI TIẾT</button> </a> 
-          
-              </div>
-              
-          </div>
-      </div>`)
+          data.forEach((item)=>{
+              $(".search-product-list").append(
+              ` <div class="product-wrap">
+                  <div class="product">
+                    <div class="product-img">
+                        <img src="../img/${item.hinh}" width="300x" height="380px" alt="">
+                    </div>
+                    <div class="product-info">
+                        <p>${item.tensp}</p>
+                        <p class="product-price">${numberWithCommas(item.dongia)} vnđ</p>
+                        <a  class ="a-muangay" href="product-description.html?id=${item.masp}"><button class="btn-product-muangay">XEM CHI TIẾT</button> </a>             
+                    </div>                  
+                  </div>
+                </div>`)
           });
         }
       }

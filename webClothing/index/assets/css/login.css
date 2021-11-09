@@ -1,69 +1,104 @@
-.box-login{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#formLogin{
     width: 390px;
     height: 500px;
-    margin:  0px auto;
+    margin:  100px auto 20px;
     border: 1px rgb(241, 239, 239) solid;
     box-shadow: 0px 4px 1px 4px rgb(250, 249, 249);
-    margin-top: 100px;
     padding: 30px;
-    font-family:inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#formLogin h2{
+    margin-bottom: 30px;
+}
+.form-group{
+    margin-bottom: 20px;
+    width: 85%;
+}
+.form-group > *{
+    display: block;
 }
 
-input[type="text" ]:not(.search),input[type="password" ] {
- 
-    width: 320px;
+input[type="text"]:not(.search),input[type="password" ] {
+    width: 100%;
     height: 35px;
-    margin: 0px auto;
-    margin-top: 30px;
     padding: 10px;
     font-size: 1.0rem;
     border-radius: 4px;
     border: 1px solid rgb(241, 239, 239);
 }
-.action-button{
-    width: 320px;
-    height: 35px;
+.form-group.invalid input[type="text"]:not(.search),
+.form-group.invalid input[type="password" ]{
+    border: 1px solid red;
+}
+.form-group.invalid span{
+    color: red;
+}
+.link-register{
+    text-decoration:none;
+    color: #ffff;
+    font-family:'Roboto', sans-serif;
+    font-weight: 600;
+}
+.btnRegisterLogin{
+    width: 100%;
+    height: 100%;
     background-color: rgb(104, 100, 100);
-
     border-radius: 4px;
     border: 1px solid rgb(104, 100, 100);
     cursor: pointer;
     text-align: center;
     padding-top: 3px;
+    color: #fff;
+    font-weight: 600;
+}
+a.link-register{
+    display: block;
+    width: 85%;
+    height: 35px;
 }
 .btn-login{
-    margin-top: 60px;
-    width: 320px;
+    margin-top: 30px;
+    width: 85%;
     height: 35px;
     background-color: rgb(104, 100, 100);
     font-weight: 600;
     border-radius: 4px;
     border: 1px solid rgb(104, 100, 100);
     cursor: pointer;
-    color: #ffff;
-    
+    color: #ffff; 
 }
- .btn-register{
-    text-decoration:none;
-    color: #ffff;
-    font-family:'Roboto', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-/* .btn-register{
-    width: 320px;
-    height: 35px;
-    background-color: rgb(104, 100, 100);
-    color: white;
-    font-weight: 600;
-    border-radius: 4px;
-    border: 1px solid rgb(104, 100, 100);
-    cursor: pointer;
-} */
-h2{
+.askAccountLabel{
+    display: block;
     text-align: center;
+    width: 80%;
+    padding: 10px 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 label.error{
     color: red;
-    display: block;
+}
+@media(max-width:1024px) and (min-width:740px){
+    .box-login{
+        width: 330px;
+        height: 440px;
+    }
+}
+@media(max-width:739px){
+    body{
+        font-size: 14px;
+    }
+    .box-login{
+        width: 300px;
+        height: 430px;
+    }
+    
 }

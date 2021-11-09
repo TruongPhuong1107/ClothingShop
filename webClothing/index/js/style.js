@@ -1,44 +1,59 @@
-window.addEventListener('DOMContentLoaded', (event)=>{
-	const { matches } = window.matchMedia("prefers-reduced-motion: reduce");
-    if (!matches) {
-        const text = document.querySelector(".img-slide-title");
-        const textLength = text.getAttribute("textLength");
-        text.innerHTML = text.textContent
-            .split("")
-            .map((letter) => `<tspan textLength="${textLength}">${letter}</tspan>`)
-            .join("");
-        const animation = anime.timeline();
-        animation.add({
-            targets: "p tspan",
-            opacity: [0,1],
-            duration: 425,
-            easing: "easeInOutQuad",
-            delay: (d, i) => 50 * i + 500
-        });
-        window.addEventListener("click", () => animation.restart());
+// manual button click slider
+var slideIndex = 1;
+const currentSlide = (n) => {
+    let slide = document.getElementsByClassName("banner");
+    if(n>slide.length)
+    {
+        slideIndex = 1;
     }
-    console.log('textLength');
-	
-})
-function glide() {
-    document.querySelectorAll(".product-list").forEach (e=>{
-        new Glide(e.querySelector(".glide"),{
-            type:'slider',
-            startAt:0,
-            perView:4,
-            rewind:false,
-            bound:true,
-    
-    
-        }).mount()
-        
-        
-    })	
+    if(n<1)
+    {
+        slideIndex = slide.length;
+    }
+    for(let i =0;i<slide.length;i++){
+        slide[i].classList.remove("active");
+    }
+    slide[slideIndex-1].classList.add("active");
 }
+currentSlide(slideIndex);
+const next = (n) => {
+   currentSlide(slideIndex+=n)
+}
+const prev = () => {
+    if(slideIndex < 0){
+        slideIndex = slideIndex.length;
+    }
+    slideIndex--;
+}
+// auto slide
+showSlides();
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("banner");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) 
+  {slideIndex = 1}
+  slides[slideIndex-1].classList.add("active");
+  setTimeout(showSlides, 4000);
+}
+// new products slider
 window.onload= function(){
-  
-	
-	glide();
-   
+    function glide() {
+        document.querySelectorAll(".product-list").forEach (e=>{
+            new Glide(e.querySelector(".glide"),{
+                type:'slider',
+                startAt:0,
+                perView:4,
+                rewind:false,
+                bound:true,
+        
+        
+            }).mount()      
+        })	
+    }
+   glide();
 };
 

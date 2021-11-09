@@ -8,66 +8,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&family=Quicksand:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/login.css">
-
-    
     <title>LYS</title>
 </head>
 <body>
- <header>
-     <div class="bar">
-         <div class="container-group">
-            <div class="box-actions-left">
-                <div class="icon justify">
-               <button class="fas fa-align-justify" value="dropdown" id="justify"></button>
-               <div class="dropdown-content" id="dropdown">
-
-                   
-               </div>
-           </div>
-                <div class="icon home">
-               <a href="./index.html" >HOME</a>
-           </div>
-              
-            </div>
-            
-             <div class="box-title">LYS</div>
-             <div class="box-actions-right">
-                <span>
-                   
-                        <div class="search-box"><input id="search" class="search" type="text"><i id="arrow-right" class="fas fa-arrow-right"></i></div>
-                
-                    <span class="login-check" id="login-check"></span>
-        
-                    <a id="icon-search"><i id="icon-search" class="fas fa-search"></i></a>
-                    <a href="#" class="cart">CART</a>
-                </span>            
-                </div>                   
+    <header>
+        <div class="bar">
+            <div class="container-group">
+                <div class="box-actions-left">
+                    <div class="icon justify">
+                        <button class="fas fa-align-justify" value="dropdown" id="justify"></button>
+                        <div class="dropdown-content" id="dropdown">  
+                        </div>
+                    </div>
+                </div>
+                <div class="box-title"><a href="./index.html">LYS</a></div>
+                <div class="box-actions-right">
+                    <span>
+                        <div class="search-box">
+                            <input id="search" class="search" type="text"><i id="arrow-right" class="fas fa-arrow-right"></i>
+                        </div>
+                        <span class="login-check" id="login-check"></span>
+                        <a id="icon-search"><i id="icon-search" class="fas fa-search"></i></a>
+                        <a href="./cart.html" class="cart">CART</a>
+                    </span>            
                 </div>              
-         </div>
-        
+            </div>
         </div>
- </header>
-<body>
+    </header>
     <main>
-<div class="box-login">
+    <form method="post" id="formLogin">
     <h2>ĐĂNG NHẬP</h2>
-
+    <div class="form-group">
+        <label for="userName" class="form-label">Tên đăng nhập</label>
         <input type="text" class="username" id="username" value="" name="tendn" placeholder="Tên đăng nhập">
-      <input type="password" name="matkhau" id="password" class="password" value="" placeholder="Mật khẩu">
-      <p class="error"></p>
-    <input type="submit" class="btn-login" id="btn-login" value="Đăng nhập" onclick="login()">
-
-    <h2>BẠN CHƯA CÓ TÀI KHOẢN?</h2>
-    <a href="./Register.html" class="btn-register">
-    <div class="action-button">
-        Đăng ký
+        <span class="form-message"></span>
     </div>
-</a>
-    
-</div>
+    <div class="form-group">
+        <label for="password" class="form-label">Mật khẩu</label>
+        <input type="password" name="matkhau" id="password" class="password" value="" placeholder="Mật khẩu">
+        <span class="form-message"></span>
+    </div>
+    <div class="error"></div>
+    <input type="submit" class="btn-login" id="btn-login" value="Đăng nhập">
+    <label class="askAccountLabel">BẠN CHƯA CÓ TÀI KHOẢN?</label>
+    <a href="./Register.html" class="link-register">
+        <div  class="btnRegisterLogin">Đăng ký</div>
+    </a>
+    </form>
+
 
     </main>
     <footer>
@@ -82,6 +72,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script src="./js/main.js"></script>
-<script src="./js/login-register.js"></script>
+<script src="./js/validator.js"></script>
+<script src="./js/login.js"></script>
 
 </html>

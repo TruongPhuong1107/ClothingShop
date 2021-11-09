@@ -8,20 +8,18 @@ $(window).scroll(function(){
     $('header').removeClass('sticky');
   }
 });
-
 });
-
 function icons() {
-var icon=document.querySelector('#icon-search')
-var arrow=document.querySelector('#arrow-right')
-var searchbox=document.querySelector('.search-box')
-var arrow=document.querySelector('#arrow-right')
-icon.onclick=function(){
-searchbox.style.display="block";     
-}
-arrow.onclick=function(){
-    searchbox.style.display="none";
-}
+	var icon=document.querySelector('#icon-search')
+	var arrow=document.querySelector('#arrow-right')
+	var searchbox=document.querySelector('.search-box')
+	var arrow=document.querySelector('#arrow-right')
+	icon.onclick=function(){
+	searchbox.style.display="block";     
+	}
+	arrow.onclick=function(){
+		searchbox.style.display="none";
+	}
 }
 icons();
 
@@ -84,15 +82,21 @@ $('.search').keypress(function(event) {
 function logOut(){
 	sessionStorage.removeItem("userInfo");
 	sessionStorage.removeItem("product");
+	window.location = './index.html'
 	return;
-  }
+}
   
   window.addEventListener('DOMContentLoaded', (event) => {
 	if (sessionStorage.getItem("userInfo") !== null) {
 	  document.getElementById('login-check').innerHTML=
 	  `<span id="button">
-	  <a href="./BillInfo.html" style="margin-right:15px; font-weight:bold; text-decoration:none; color:#333"> <span style="margin-right:15px; font-weight:bold"><i class="far fa-user" style="margin-right:5px"></i> ${JSON.parse(sessionStorage.getItem("userInfo")).tenchutk}</span> </a>
-		  <a onclick="logOut()" href="./index.html" class="logout">Đăng xuất</a>
+	  		<a href="./BillInfo.html" > 
+				<span >
+					${JSON.parse(sessionStorage.getItem("userInfo")).tendn}
+				</span> 
+			</a>
+		  	<a  onclick="logOut()"  class="logout"></a>
+			<i class="fas fa-sign-out-alt" onclick="logOut()"></i>
 		</span>  
 	  `
 	}
@@ -101,5 +105,5 @@ function logOut(){
 	`<a href="login.html"><i  class="fas fa-user"></i></a>`
 	}
   });
-
+// Xử lí chạy slide
 

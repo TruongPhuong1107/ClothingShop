@@ -1,25 +1,61 @@
-table{
-    width: 100%;
-    border-bottom: rgb(255, 255, 255) 1px solid;
-    border-collapse:collapse;
+main{
+    padding: 10px;
 }
-th{
-    border-bottom: rgb(158, 156, 156) 1px solid;
+.tableTitle{
+    display: flex; 
+    justify-content: center;
 }
-td:not(.total){
-    border-bottom: rgb(158, 156, 156) 1px solid;
-    text-align: center;
+.tableItem{
+    display: flex; 
+    justify-content: center;
+    border-bottom: solid 1px rgb(83, 82, 82);
+}
+.tableItems .imgProCart{
+    padding: 10px 10px;
+    width: calc(100% / 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tableItem .imgProCart img{
+   width: 50px;
+   height: 70px;
+}
+.tableItems .forResponsive{
+    width: calc(100% - (100% / 6));
+    display: flex;
+}
+.tableTitle > div{
+    padding: 10px 10px;
+    width: calc(100% / 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px rgb(83, 82, 82);
+}
+.tableItems .forResponsive > div{
+    padding: 10px 10px;
+    width: calc(100% / 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px rgb(83, 82, 82);
+}
+.tableItems .forResponsive >div{
+    border-bottom:none
+}
+.totalPrice{
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 10px;
 }
 .total{
-    text-align: center;
+    display: inline-block;
     font-weight: 600;
 }
 .cart-table{
     margin-top: 100px;
     color: rgb(44, 43, 43);
-}
-.img{
-   
 }
 .number{
     height: 30px;
@@ -27,22 +63,26 @@ td:not(.total){
 }
 .btn-group{
     display: flex;
-    float: right;
-    margin-top: 40px;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
-.btn-group > .update , .checkout{
+.btn-group > .btnCheckout{
    border: black 1px solid;
-   width: 120px;
-   padding: 10px 5px;
-   margin: 0px 40px;
-   text-align: center;
+   padding: 5px 10px;
    font-size: 0.9rem;
    font-weight: 600;
-   width: 180px;
+   color: #333;
+   cursor: pointer;
 }
-.continue{
-    clear: right;
-    margin-top: 100px;
+.btnDelete button{
+    background: rgb(212, 45, 3);
+    border: none;
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.btnDelete button:hover{
+    background: rgb(177, 59, 30, 0.9);
 }
 .buttons_added {
     opacity:1;
@@ -52,6 +92,7 @@ td:not(.total){
     white-space:nowrap;
     vertical-align:top;
 }
+
 .is-form {
     overflow:hidden;
     position:relative;
@@ -88,4 +129,52 @@ td:not(.total){
 .input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
     -webkit-appearance:none;
     margin:0;
+}
+@media ( max-width: 739px){
+    .tableItems{
+        flex-direction: column;
+        
+    }
+    .tableItems .imgProCart{
+        width: calc(100% / 3);
+    }
+    .tableItem .imgProCart img{
+        width: 100px;
+        height: 120px;
+     }
+    .tableItems .forResponsive{
+        width: calc(100% - (100% / 3));
+    }
+    .product-table{
+        border-top: 1px solid #999;
+    }
+    .tableTitle{
+        display: none;
+    }
+    .tableItems > .imgProCart, .tableItem .forResponsive {
+        border-bottom: none;
+    }
+    .tableItems .forResponsive {
+        flex-direction: column;
+    }
+    .tableItems .forResponsive > div{
+        width: 100%;
+        justify-content: left;
+        padding: 5px 20px 10px;
+    }
+    .is-form {
+        height:1.8rem;
+        width:1.5rem;
+    }
+    .input-qty {
+        height:1.8rem;
+    }
+    .input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+        -webkit-appearance:none;
+        margin:0;
+    }
+    .btn-group {
+        padding: 2px 7px;
+        font-size: 0.9rem;
+    }
 }

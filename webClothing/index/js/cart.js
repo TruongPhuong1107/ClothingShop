@@ -1,39 +1,54 @@
-var getProduct= JSON.parse(sessionStorage.getItem("product"));
-var total=0;
-for(var i=0;i<getProduct.length;i++){
-$("#product-cart").append(
-`
-<tr><td>
-                    <img src="${getProduct[i].hinh}" width="50px" height="70px" height: 50px; alt="">
-                    </td>
-                    <td class="tensp">${getProduct[i].tensp}</td>
-                    <td >
-                    <div class="buttons_added">
-                    <input class="minus is-form" id="minus" type="button" value="-">
-                    <input aria-label="quantity" class="input-qty" max="100" min="1" name="" type="number" value="${getProduct[i].soluong}">
-                    <input class="plus is-form" id="plus" type="button" value="+">
-                    </div>   
-                    </td>
-                    <td>
-                    <span>${getProduct[i].tenmau}, ${getProduct[i].tenkt}</span>
-                </td>
-                    <td id="dongia">
-                        ${numberWithCommas(getProduct[i].dongia)} vnđ
-                    </td>
-                    <td><div><button value="Xóa" onclick="" class="delete">Xóa</button></div></td></tr>`
-)
-total+=(Number(getProduct[i].soluong)*Number(getProduct[i].dongia));
-}
+var getProduct = JSON.parse(sessionStorage.getItem("product"));
+var total = 0;
+var btnCheckout = document.getElementById('checkout');
+btnCheckout.addEventListener('click', function() {
+  if(sessionStorage.getItem('product') && sessionStorage.getItem('product').length != 0){
+    window.location.href = './checkout.html'
+  }
+  else {
+    alert (' Vui lòng chọn mua sản phẩm');
+  }
+});
 
-
-console.log(total)
-$("#product-cart").append(`<tr >
-<td class="total"></td>
-<td class="total" >Tổng tiền:</td>
-<td class="total" id="total">${numberWithCommas(total)} vnđ</td>
-
-</tr>`
-)
+(function showCart() {
+  for(var i=0;i<getProduct.length;i++){
+  $(".tableItems").append(
+  `<div class="tableItem">
+    <div class="imgProCart">
+    <img src="${getProduct[i].hinh}" alt="">
+    </div>
+    <div class="forResponsive">
+    <div class="tensp">
+        ${getProduct[i].tensp}
+    </div>
+    <div>
+        <div class="buttons_added">
+            <input class="minus is-form" id="minus" type="button" value="-">
+            <input aria-label="quantity" class="input-qty" max="100" min="1" name="" type="number" value="${getProduct[i].soluong}">
+            <input class="plus is-form" id="plus" type="button" value="+">
+        </div>   
+    </div>
+    <div>
+        <span>${getProduct[i].tenmau}, ${getProduct[i].tenkt}</span>
+    </div>
+    <div id="dongia">
+        ${numberWithCommas(getProduct[i].dongia)} vnđ
+    </div>
+    <div class="btnDelete">
+        <button value="Xóa" onclick="" class="delete">Xóa</button>
+    </div>
+    </div>
+    </div>`
+  )
+  total+=(Number(getProduct[i].soluong)*Number(getProduct[i].dongia));
+  }
+  $(".totalPrice").append(
+  `
+    <div class="total">Tổng tiền:</div>
+    <div class="total" id="total">${numberWithCommas(total)} vnđ</div>
+  `
+  )
+})()
 
 $('input.input-qty').each(function() {
     var $this = $(this),
@@ -54,13 +69,12 @@ $('input.input-qty').each(function() {
       $this.attr('value', d).val(d)
     })
   })
- var minus=document.getElementsByClassName("minus");
- var plus=document.getElementsByClassName("plus");
- 
- var total=document.getElementById("total");
+var minus=document.getElementsByClassName("minus");
+var plus=document.getElementsByClassName("plus");
+var total=document.getElementById("total");
 var xoa =document.getElementsByClassName("delete");
- const updateCart =(e)=>{
-   let getparent =e.target.parentElement.parentElement.parentElement;
+const updateCart = (e)=>{
+   let getparent = e.target.parentElement.parentElement.parentElement;
    let namesp=getparent.getElementsByClassName("tensp")[0].innerText;
     for(var i=0;i<getProduct.length;i++){
         if(getProduct[i].tensp==namesp){
@@ -97,12 +111,12 @@ var xoa =document.getElementsByClassName("delete");
     total.innerText=numberWithCommas(tong) + "vnđ" ;
 }
 for(var i=0;i<minus.length;i++){
- minus[i].addEventListener("click",updateCart);
- plus[i].addEventListener("click",updateCart);
+  minus[i].addEventListener("click",updateCart);
+  plus[i].addEventListener("click",updateCart);
 }
 
 for(var i=0;i<xoa.length;i++){
-xoa[i].addEventListener("click",updateCart);
+  xoa[i].addEventListener("click",updateCart);
 }
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

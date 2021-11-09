@@ -1,0 +1,26 @@
+.searchcontainer{
+    margin-top: 60px;
+    padding: 0 10px;
+    position: relative;
+}
+.search-product-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    width: calc(100% + 20px);
+    margin-bottom: 30px;
+}
+.quantityPd{
+    font-size: 30px; 
+    margin-left: 10px; 
+    margin-bottom: 30px;
+}
+
+@media(max-width:1024px){
+    .search-product-list {
+        margin-left: -10px;
+        width: calc(100% + 10px);
+    }
+}

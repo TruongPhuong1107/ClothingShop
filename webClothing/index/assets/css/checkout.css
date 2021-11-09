@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-#formRegister{
+#formInfoCheckout{
     width: 420px;
     min-height: 500px;
     margin:  100px auto 20px;
@@ -29,7 +29,7 @@ input[type="text" ]:not(.search),input[type="email" ],input[type="password"  ],i
     border-radius: 4px;
     border: 1px solid rgb(241, 239, 239);
 }
- .btn-register{
+ .btn-checkout{
     width: 85%;
     height: 35px;
     background-color: rgb(104, 100, 100);
@@ -46,8 +46,8 @@ label.error{
     display: block;
 }
 @media(max-width:1024px) and (min-width:740px){
-    .box-register{
-        width: 330px;
+    #formInfoCheckout{
+        width: 340px;
         min-height: 440px;
     }
 }
@@ -55,9 +55,9 @@ label.error{
     body{
         font-size: 14px;
     }
-    .box-register{
+    #formInfoCheckout{
         width: 300px;
-        min-height: 430px;
+        min-height: 440px;
     }
     
 }

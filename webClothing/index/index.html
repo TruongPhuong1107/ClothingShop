@@ -10,116 +10,97 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/blog.css">
-
-    
+    <link rel="stylesheet" href="./assets/css/blog.css"> 
     <title>LYS</title>
 </head>
 <body>
-    <div class="img-slide">
-        <img class="poster2"src="./assets/img/poster2.jpg" alt="">
-        <img  class="poster1" src="./assets/img/poster1.jpg" alt="">
-
-        <p class="img-slide-title"  style="text-transform: uppercase; ">ART OF THE DRESS</p>
-       </div>
- <header>
-     <div class="bar">
-         <div class="container-group">
-             <div class="box-actions-left">
-                 <div class="icon justify">
-                <button class="fas fa-align-justify" value="dropdown" id="justify"></button>
-                <div class="dropdown-content" id="dropdown">
-
-                    
-                </div>
-            </div>
-                 <div class="icon home">
-                <a href="./index.html" >HOME</a>
-            </div>
-               
-             </div>
-             <div class="box-title">LYS</div>
-             <div class="box-actions-right">
-                <span>
-                   
-                        <div class="search-box"><input id="search" class="search" type="text"><i id="arrow-right" class="fas fa-arrow-right"></i></div>
-                
-                    <span class="login-check" id="login-check"></span>
-        
-                    <a id="icon-search"><i id="icon-search" class="fas fa-search"></i></a>
-                    <a href="./cart.html" class="cart">CART</a>
-                </span>            
-                </div>              
-         </div>
-        
+    <div class="slide">
+        <div class="img-slide">
+            <img class="banner" src="./assets/img/banner4.jpg" alt="">
+            <img  class="banner" src="./assets/img/banner2.jpg" alt="">
+            <img  class="banner" src="./assets/img/banner3.jpg" alt="">
         </div>
- </header>
-
- <main> 
- 
-<div class=" main-intro">
-<div class="main-intro-col-1">
-    <h1> design <em>and</em> fashion</h1>
-</div>
-<div class="main-intro-col-2">
-    <h2 class="intro">Về chúng tôi</h2>
-    <p> LYS mang đến cho quý khách hàng những thiết kế thời trang với</br> những điểm nhấn riêng, ấn tượng và sự thoải mái</p>
-</div>
-</div>
-<!--  -->
-<div class="blog">
-    <div class="blog-title">
-        <p>HÀNG MỚI</p>
-    </div>  
-        <div class="product-list">
-                <div class="glide">
-                    <div data-glide-el="track" class="glide__track">
-                      <ul class="glide__slides">
-                        
-                      </ul>
+        <span class="next" onclick="next(1)">&rang;</span>
+        <span class="prev" onclick="prev(-1)"> &lang; </span>
+    </div>
+    <header>
+        <div class="bar">
+            <div class="container-group">
+                <div class="box-actions-left">
+                    <div class="icon justify">
+                        <button class="fas fa-align-justify" value="dropdown" id="justify"></button>
+                        <div class="dropdown-content" id="dropdown">  
+                        </div>
                     </div>
-                    <div class="glide__arrows" data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
-                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
-                      </div>
-                  </div>
-                 
-                </div>       
-
-            
-  <div class="new-arrival-intro">
-    <div class="new-arrival"><img  src="./assets/img/new-arrival.jpg" alt="" width="350px" height="400px">
-    </div> 
-      <div class="card">
-    <h2 class="card-title">
-        SUMMER VIBE
-    </h2>
-    <p class="card-discribe">
-        New outfit ideas for inspiration are never enough, especially 
-        in the Summer  when we all enjoy wearing cute dresses, skirts
-         and shorts and of course sandals
-    </p>
-    </div>
-<div class="new-arrival-2"><img  src="./assets/img/new-arrival-2.jpg" alt="" width="630px" height="570px">
-</div>
-    </div>
-    <h2 class="new-arrivals">TẤT CẢ SẢN PHẨM</h2>
-    <div class="new-arrival-list">
-
-     
-    </div>
-    <div class="view-all-product">
-        XEM THÊM
-    </div>
-</main>
- <footer>
-     <div class="footer">
-         <p class="copy-right">&copy;Bản quyền thuộc về <b>  LYS </b> </p>
-     </div>
- </footer>
+                </div>
+                <div class="box-title"><a href="./index.html">LYS</a></div>
+                <div class="box-actions-right">
+                    <span>
+                        <div class="search-box">
+                            <input id="search" class="search" type="text"><i id="arrow-right" class="fas fa-arrow-right"></i>
+                        </div>
+                        <span class="login-check" id="login-check"></span>
+                        <a id="icon-search"><i id="icon-search" class="fas fa-search"></i></a>
+                        <a href="./cart.html" class="cart">CART</a>
+                    </span>            
+                </div>              
+            </div>
+        </div>
+    </header>
+    <main> 
+        <div class="collections">
+            <div class="collectionsTitle">
+                <p>bộ sưu tập mới</p>
+            </div>  
+            <div class="collectionList">
+                <div class="collectionItem">
+                    <div class="imgBox">
+                        <img src="../img/col1.jpg" alt="">
+                    </div>
+                    <div class="collectionName name1">
+                        top collection
+                    </div>
+                </div>
+                <div class="collectionItem">
+                    <div class="imgBox">
+                        <img src="../img/col2.jpg" alt="">
+                    </div>
+                    <div class="collectionName name2">
+                        skirt collection
+                    </div>
+                </div>
+                <div class="collectionItem">
+                    <div class="imgBox">
+                        <img src="../img/col3.jpg" alt="">
+                    </div>
+                    <div class="collectionName name3">
+                        jumsuit collection
+                    </div>
+                </div>
+                
+            </div>
+        </div>       
+        <div class="imgBanner">
+            <img src="./assets/img/banner4.jpg" alt="">
+        </div>
+        <div class="allProducts">
+        <h2 class="new-arrivals">TẤT CẢ SẢN PHẨM</h2>
+        <div class="new-arrival-list">
+        </div>
+        <div class="loading">
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+        </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <p class="copy-right">&copy;Bản quyền thuộc về <b>  LYS </b> </p>
+        </div>
+    </footer>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
