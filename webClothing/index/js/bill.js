@@ -1,3 +1,4 @@
+//hgfhgfh
 $(document).ready(function(){
  var dataCustomerBill=JSON.parse(sessionStorage.getItem("customerBill"));
  var dataProduct=JSON.parse(sessionStorage.getItem("product"));
